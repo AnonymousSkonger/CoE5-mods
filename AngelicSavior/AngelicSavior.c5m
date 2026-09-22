@@ -1,0 +1,75 @@
+# ---------- Required mod info ---------------
+
+icon                "AngelicSavior.tga"
+description         "Have an angel as a commander. That's it."
+
+# ---------- Rituals ----------
+
+# newritpow                   #makes a new ritual set
+
+
+# newritual           "Divine Ascension"
+# descr               "With enough prayer, ascend to the upper eshalons of the Ophanim"
+# level               3
+# levelreq            3
+# nostart
+# nomonworldreq       1
+# addstring           "Ophanim"
+# cost                
+# apcost              6
+# planereq            1
+
+# ---------- Weapons ----------
+
+newweapon           "Blade of Heaven"
+trgrank             1       
+range               1       # Max range
+init                4       # Initiative value
+dmgtype             1       # Slash
+dmg                 9       # Base damage
+aoe                 1       # Area
+sweep                       # Sweeps
+holykill                    # Increased damage vs undead/inferno
+onlyenemy                   # Only effects enemies
+sound               1       # Slash
+nextwep                     # Extra effect if affected
+nextdmg             36      # Burn
+
+newweapon           "Will of Heaven"
+dmgtype             7       # Magic
+aoe                 999     # All enemy units
+
+
+# ---------- New Units ---------------
+
+newmonster          "Angelic savior"
+descr               "How'd he get here?"
+copyspr             "Arch Angel"
+armor               0       # Armor
+hp                  100     # Hitpoints
+str                 10       # Strength
+mor                 40      # Morale
+mr                  10      # Magic Resistance
+rank                0       # ? Rank
+spellweapon         25  3   # Prayer at level 3
+spellweapon         3   3   # Pyromancy at level 3
+meleeweapon         0   "Blade of Heaven"   # Custom Weapon
+allitemslots                # All items usable
+size2x2                     # 2x2 squares
+flying                      # Can fly
+awe                     5   # Has awe
+fastheal                    # Fast Healing
+sleepres                    # Sleep immunity
+charmres                    # Charm immunity
+coldres                 50  # 50 Cold Resistance
+shockres                100 # 100 Shock Resistance
+saner                   5   # 5 Sanity Regen
+nametype            39      # Celestial
+
+# ---------- Unit Recruitment ----------
+
+#                                       %       No. gold    die     iron
+selectclass 21                                                              # Which class accessible.
+addcomrec   "Angelic savior"            10      200         0       0       # once per offer; extra.
+recxcost    0   200                                                         # Gold cost.
+recterr      -2                                                             # The preceding offer can only be recruited in terrain: Temples.
