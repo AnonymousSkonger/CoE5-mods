@@ -1,0 +1,116 @@
+# ---------- Required mod info ---------------
+
+icon                "AngelicSavior.tga"
+description         "The angels of the Celestial Plane have seen the way the humans have conducted themselves within Elysium. Looking upon this, a decree has been put forth for a few angels to take up the role of a lord and decend down upon the plane to bring all within the fold of El."
+
+# ---------- Rituals ----------
+
+# newritpow                   #makes a new ritual set
+
+
+# newritual           "Divine Ascension"
+# descr               "With enough prayer, ascend to the upper eshalons of the Ophanim"
+# level               3
+# levelreq            3
+# nostart
+# nomonworldreq       1
+# addstring           "Ophanim"
+# cost                
+# apcost              6
+# planereq            1
+
+# ---------- Weapons ----------
+
+newweapon           "Blade of Heaven"
+trgrank             1       
+range               1       # Max range
+init                4       # Initiative value
+dmgtype             1       # Slash
+dmg                 9       # Base damage
+aoe                 1       # Area
+sweep                       # Sweeps
+holykill                    # Increased damage vs undead/inferno
+onlyenemy                   # Only effects enemies
+sound               1       # Slash
+nextwep                     # Extra effect if affected
+nextdmg             36      # Burn
+
+newweapon           "Will of Heaven"
+dmgtype             7       # Magic
+aoe                 999     # All enemy units
+
+
+# ---------- New Units ---------------
+
+newmonster          "Promising Angel"
+descr               "An angel that has a notably higher virtue, allowing it to "
+copyspr             "Angel"
+armor               0       # Armor
+hp                  40      # Hitpoints
+str                 10      # Strength
+mor                 40      # Morale
+mr                  10      # Magic Resistance
+rank                0       # ? Rank
+spellweapon         25  2   # Prayer at level 2
+spellweapon         3   1   # Pyromancy at level 1
+meleeweapon         0       # Custom Weapon
+allitemslots                # All items usable
+flying                      # Can fly
+awe                     1   # Has awe
+fastheal                    # Fast Healing
+sleepres                    # Sleep immunity
+charmres                    # Charm immunity
+coldres                 50  # 50 Cold Resistance
+shockres                50  # 50 Shock Resistance
+saner                   5   # 5 Sanity Regen
+blessings                   # Blessed
+nametype            39      # Celestial
+
+# ---------- Class Adding ----------
+
+newclass
+setclassname "Angel"
+classdescr "The angels of the Celestial Plane have seen the way the humans have conducted themselves within Elysium and have been taking note of the increased activity within the damned realm of infernoS. Looking upon this, a decree has been put forth for a few angels to take up the role of a lord and decend down upon the plane to bring all within the fold of El."
+classabdescr "Angelic Lord starts with a Bronse Castle in 'Celestial' above Elysium. ^Greater Demons can assemble infernal armies from sacrificed souls or Sinners. ^Demons can utilize demonic rituals to travel to Elysium to gather additional Sinners for their infernal armies, dragging them back to their infernal citadels and converting them into fresh demons. ^Ambitious Demon Lords can eventually create a portal to Elysium, waging a war for control of the whole world. (Though this may result in heavenly repercussions)"
+
+# ---------- Unit Recruitment ----------
+
+addunitrec  "Angel"                             100  5   0   0    0
+recxcost    12   20                             # Sacrifice additional cost.
+
+# ----- Commander Recruitment -----
+
+#                                       %       No. gold    die     iron
+addcomrec   "Promising Angel"           100     0           0       0       # once per offer; extra.
+recxcost    12  200                                                         # Gold cost.
+
+
+# ---------- Removing Stupid ----------
+
+selectmonster "Angel"
+clearmove
+flying
+
+selectmonster "Angelic Warrior"
+clearmove
+flying
+
+selectmonster "Harbinger"
+clearmove
+flying
+
+selectmonster "Arch Angel"
+clearmove
+flying
+
+selectmonster "Seraph"
+clearmove
+flying
+
+selectmonster "Ophan"
+clearmove
+flying
+
+selectmonster "Celestial Lion"
+clearmove
+flying
